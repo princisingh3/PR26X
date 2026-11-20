@@ -1,0 +1,906 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --bg: #080914;
+    --card: #111326;
+    --card-light: #191d35;
+    --primary: #8b5cf6;
+    --secondary: #00d9ff;
+    --text: #f5f5ff;
+    --muted: #a4a7c2;
+    --border: rgba(255, 255, 255, 0.09);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+.navbar {
+    width: 100%;
+    min-height: 80px;
+    padding: 15px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    background: rgba(8, 9, 20, 0.92);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(15px);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 17px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.brand-icon {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    border-radius: 12px;
+    font-size: 23px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: var(--muted);
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--secondary);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn {
+    border: 1px solid transparent;
+    padding: 11px 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: linear-gradient(120deg, var(--primary), #5142d9);
+    color: white;
+    box-shadow: 0 5px 20px rgba(139, 92, 246, 0.2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+}
+
+.btn-outline {
+    border-color: var(--border);
+    color: white;
+    background: transparent;
+}
+
+.btn-outline:hover {
+    border-color: var(--secondary);
+    color: var(--secondary);
+}
+
+.btn-large {
+    padding: 15px 26px;
+    font-size: 13px;
+}
+
+.menu-toggle {
+    display: none;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 25px;
+}
+
+.hero-section {
+    min-height: 680px;
+    padding: 100px 8%;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 50px;
+    background:
+        radial-gradient(circle at 80% 50%, rgba(90, 55, 180, 0.18), transparent 35%),
+        radial-gradient(circle at 10% 10%, rgba(0, 217, 255, 0.08), transparent 30%);
+}
+
+.section-label {
+    display: inline-block;
+    color: var(--secondary);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(35px, 5vw, 65px);
+    line-height: 1.3;
+    margin-bottom: 22px;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #9b7bff, #00d9ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-content > p {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.9;
+    max-width: 540px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 45px;
+    margin-top: 55px;
+    flex-wrap: wrap;
+}
+
+.hero-stats h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 25px;
+    color: var(--secondary);
+}
+
+.hero-stats p {
+    color: var(--muted);
+    font-size: 10px;
+    margin-top: 5px;
+    text-transform: uppercase;
+}
+
+.hero-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 380px;
+}
+
+.core-card {
+    width: 290px;
+    height: 330px;
+    padding: 25px;
+    border: 1px solid rgba(139, 92, 246, 0.5);
+    border-radius: 22px;
+    background: linear-gradient(145deg, #191b3a, #0c0d1e);
+    box-shadow: 0 0 60px rgba(139, 92, 246, 0.2);
+    text-align: center;
+    animation: float 4s ease-in-out infinite;
+}
+
+.core-card > span {
+    font-size: 10px;
+    color: var(--secondary);
+    letter-spacing: 2px;
+}
+
+.core-symbol {
+    width: 130px;
+    height: 130px;
+    margin: 35px auto 20px;
+    display: grid;
+    place-items: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 75px;
+    font-weight: 900;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #8b5cf6, #00d9ff);
+    box-shadow: 0 0 45px rgba(0, 217, 255, 0.3);
+}
+
+.core-card h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 25px;
+    letter-spacing: 3px;
+}
+
+.core-card p {
+    color: var(--muted);
+    font-size: 10px;
+    margin-top: 8px;
+    letter-spacing: 2px;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.section {
+    padding: 90px 8%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-heading h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(25px, 4vw, 38px);
+    margin-bottom: 15px;
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.feature-card,
+.dashboard-card,
+.difficulty-card {
+    padding: 30px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.feature-card:hover,
+.dashboard-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.1);
+}
+
+.feature-icon {
+    font-size: 32px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.dashboard-section {
+    background: #0b0d1b;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.dashboard-card {
+    text-align: center;
+}
+
+.dashboard-card p {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.dashboard-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 25px;
+    color: var(--secondary);
+    margin-top: 12px;
+}
+
+.difficulty-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.difficulty-card {
+    color: white;
+    text-align: center;
+}
+
+.difficulty-card:hover,
+.difficulty-card.selected {
+    border-color: var(--secondary);
+    background: var(--card-light);
+    transform: translateY(-5px);
+}
+
+.difficulty-card > span {
+    font-size: 35px;
+}
+
+.difficulty-card h3 {
+    margin: 15px 0 8px;
+    font-size: 18px;
+}
+
+.difficulty-card p {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.level-progress {
+    max-width: 650px;
+    margin: 0 auto 35px;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.progress-track {
+    height: 9px;
+    background: var(--card-light);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    border-radius: 20px;
+    transition: width 0.4s;
+}
+
+.levels-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 12px;
+}
+
+.level-card {
+    min-height: 65px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: white;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.level-card:hover:not(:disabled) {
+    border-color: var(--secondary);
+    transform: translateY(-4px);
+}
+
+.level-card.locked {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.level-card.completed {
+    background: rgba(0, 217, 255, 0.12);
+    border-color: var(--secondary);
+}
+
+.game-container {
+    max-width: 850px;
+    margin: auto;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.game-topbar {
+    padding: 25px;
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    background: var(--card-light);
+    border-bottom: 1px solid var(--border);
+}
+
+.game-topbar p {
+    color: var(--muted);
+    font-size: 11px;
+    margin-bottom: 7px;
+}
+
+.game-topbar h3 {
+    color: var(--secondary);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 17px;
+}
+
+.puzzle-content {
+    padding: 45px 25px;
+    text-align: center;
+}
+
+#puzzleCategory {
+    color: var(--secondary);
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.puzzle-content > h3 {
+    font-size: 20px;
+    margin: 22px 0;
+}
+
+.puzzle-visual {
+    width: 150px;
+    min-height: 100px;
+    margin: 25px auto;
+    display: grid;
+    place-items: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 40px;
+    color: var(--secondary);
+    border: 1px solid var(--primary);
+    border-radius: 15px;
+    background: rgba(139, 92, 246, 0.08);
+}
+
+#answerForm {
+    display: flex;
+    max-width: 500px;
+    margin: auto;
+    gap: 10px;
+}
+
+#answerInput,
+.form-group input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--border);
+    outline: none;
+    border-radius: 8px;
+    background: #080914;
+    color: white;
+}
+
+#answerInput:focus,
+.form-group input:focus {
+    border-color: var(--secondary);
+}
+
+.puzzle-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.game-message,
+.hint-message,
+.auth-message {
+    margin-top: 15px;
+    font-size: 13px;
+}
+
+.leaderboard-container {
+    max-width: 750px;
+    margin: auto;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.leaderboard-header,
+.leaderboard-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    padding: 18px 25px;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.leaderboard-header {
+    background: var(--card-light);
+    color: var(--secondary);
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+.leaderboard-row {
+    font-size: 13px;
+}
+
+.leaderboard-empty {
+    padding: 30px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.cta-section {
+    margin: 50px 8% 90px;
+    padding: 75px 25px;
+    text-align: center;
+    border: 1px solid rgba(139, 92, 246, 0.4);
+    border-radius: 20px;
+    background:
+        radial-gradient(circle at center, rgba(139, 92, 246, 0.2), transparent 65%),
+        var(--card);
+}
+
+.cta-section h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(23px, 4vw, 36px);
+    margin: 10px 0 20px;
+}
+
+.cta-section p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.footer {
+    padding: 35px 8%;
+    text-align: center;
+    background: #060711;
+    border-top: 1px solid var(--border);
+}
+
+.footer-brand strong {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+}
+
+.footer p {
+    color: var(--muted);
+    font-size: 11px;
+    margin-top: 10px;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    place-items: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 200;
+}
+
+.modal.show {
+    display: grid;
+}
+
+.modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    padding: 35px;
+    background: var(--card);
+    border: 1px solid var(--primary);
+    border-radius: 16px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 18px;
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 26px;
+}
+
+.modal-content > h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    color: var(--secondary);
+    margin-bottom: 20px;
+}
+
+.modal-content > h3 {
+    font-size: 21px;
+    margin-bottom: 8px;
+}
+
+.modal-content > p {
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 17px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.auth-submit {
+    width: 100%;
+    margin-top: 5px;
+}
+
+.auth-switch {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.auth-switch button {
+    border: none;
+    background: transparent;
+    color: var(--secondary);
+    font-weight: 600;
+}
+
+.footer-tagline {
+    margin-top: 15px;
+}
+
+@media (max-width: 1000px) {
+    .nav-links {
+        gap: 15px;
+    }
+
+    .hero-section {
+        padding: 80px 6%;
+    }
+
+    .levels-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 750px) {
+    .navbar {
+        padding: 15px 5%;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        flex-direction: column;
+        background: #111326;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-actions .btn {
+        padding: 9px 12px;
+        font-size: 11px;
+    }
+
+    .hero-section {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 75px 6%;
+    }
+
+    .hero-content > p {
+        margin: auto;
+    }
+
+    .hero-buttons,
+    .hero-stats {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        min-height: 350px;
+    }
+
+    .features-grid,
+    .difficulty-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section {
+        padding: 70px 6%;
+    }
+
+    .levels-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    #answerForm {
+        flex-direction: column;
+    }
+
+    .cta-section {
+        margin: 30px 5% 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .brand {
+        font-size: 12px;
+        gap: 7px;
+    }
+
+    .brand-icon {
+        width: 34px;
+        height: 34px;
+        font-size: 18px;
+    }
+
+    .nav-actions {
+        gap: 6px;
+    }
+
+    .nav-actions .btn {
+        padding: 8px 9px;
+        font-size: 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 34px;
+    }
+
+    .hero-content > p {
+        font-size: 13px;
+    }
+
+    .hero-stats {
+        gap: 22px;
+    }
+
+    .hero-stats h3 {
+        font-size: 21px;
+    }
+
+    .core-card {
+        width: 260px;
+        height: 310px;
+    }
+
+    .features-grid,
+    .difficulty-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .dashboard-card {
+        padding: 20px 10px;
+    }
+
+    .dashboard-card h3 {
+        font-size: 19px;
+    }
+
+    .levels-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .game-topbar {
+        padding: 18px 10px;
+    }
+
+    .game-topbar h3 {
+        font-size: 13px;
+    }
+
+    .game-topbar p {
+        font-size: 9px;
+    }
+
+    .puzzle-content {
+        padding: 35px 15px;
+    }
+
+    .puzzle-content > h3 {
+        font-size: 16px;
+    }
+
+    .puzzle-actions {
+        flex-wrap: wrap;
+    }
+
+    .leaderboard-header,
+    .leaderboard-row {
+        padding: 15px;
+    }
+
+    .modal-content {
+        padding: 25px 20px;
+    }
+
+    .cta-section {
+        padding: 55px 15px;
+    }
+}
